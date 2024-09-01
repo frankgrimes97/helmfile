@@ -769,6 +769,7 @@ type SyncOpts struct {
 	SkipCRDs         bool
 	Wait             bool
 	WaitForJobs      bool
+	Timeout          time.Duration
 	ReuseValues      bool
 	ResetValues      bool
 	PostRenderer     string

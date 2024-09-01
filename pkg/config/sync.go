@@ -1,5 +1,7 @@
 package config
 
+import "time"
+
 // SyncOptions is the options for the build command
 type SyncOptions struct {
 	// Set is the set flag
@@ -22,6 +24,8 @@ type SyncOptions struct {
 	Wait bool
 	// WaitForJobs is the wait for jobs flag
 	WaitForJobs bool
+	// Timeout is the '--timeout' flag
+	Timeout time.Duration
 	// ReuseValues is true if the helm command should reuse the values
 	ReuseValues bool
 	// ResetValues is true if helm command should reset values to charts' default
@@ -107,6 +111,11 @@ func (t *SyncImpl) Wait() bool {
 // WaitForJobs returns the wait for jobs
 func (t *SyncImpl) WaitForJobs() bool {
 	return t.SyncOptions.WaitForJobs
+}
+
+// Timeout returns the timeout
+func (t *SyncImpl) Timeout() time.Duration {
+	return t.SyncOptions.Timeout
 }
 
 // ReuseValues returns the ReuseValues.

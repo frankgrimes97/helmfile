@@ -1,6 +1,7 @@
 package app
 
 import "go.uber.org/zap"
+import "time"
 
 type ConfigProvider interface {
 	Args() string
@@ -106,6 +107,7 @@ type SyncConfigProvider interface {
 	SkipDeps() bool
 	Wait() bool
 	WaitForJobs() bool
+	Timeout() time.Duration
 	SyncArgs() string
 
 	Validate() bool

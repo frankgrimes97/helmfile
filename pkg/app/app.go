@@ -1925,6 +1925,7 @@ Do you really want to sync?
 					SkipCRDs:         c.SkipCRDs(),
 					Wait:             c.Wait(),
 					WaitForJobs:      c.WaitForJobs(),
+					Timeout:          c.Timeout(),
 					ReuseValues:      c.ReuseValues(),
 					ResetValues:      c.ResetValues(),
 					PostRenderer:     c.PostRenderer(),
